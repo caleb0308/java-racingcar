@@ -1,5 +1,6 @@
-package Test;
+package racingcar;
 import java.util.*;
+
 public class CarDriver {
 	public static void main(String[] args) {
 		Scanner scanner = new Scanner(System.in);
@@ -7,7 +8,7 @@ public class CarDriver {
 		
 		System.out.println("경주할 자동차 이름은 입력하세요. (이름은 쉽표(,)를 기준으로 구분)");
 		String[] nameArr = Input.carName(scanner);   // 경기에 참가할 참가자의 이름을 입력한다.
-		Car[] cars = carArr.cars(nameArr);   // 각 참가자(인스턴스)를 생성한다.
+		Car[] cars = CarArr.cars(nameArr);   // 각 참가자(인스턴스)를 생성한다.
 		
 		System.out.println("시도할 회수는 몇회인가요?");
 		int tries = Input.tryNum(scanner);   // 총 몇번 시도할 것인지 입력한다.
@@ -98,7 +99,7 @@ class Winners {
 	}
 }
 
-class carArr {
+class CarArr {
 	static Car[] cars(String[] nameArr) {   // Car타입의 객체배열을 생성하는 메서드   
 		Car[] cars = new Car[nameArr.length];
 		for (int i = 0; i < nameArr.length; i++) {
@@ -107,4 +108,3 @@ class carArr {
 		return cars;
 	}
 }
-
